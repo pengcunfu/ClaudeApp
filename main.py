@@ -532,12 +532,7 @@ class MCPServerDialog(QDialog):
 def main():
     import sys
 
-    # Enable High DPI scaling
-    if hasattr(Qt, 'AA_EnableHighDpiScaling'):
-        QApplication.setAttribute(Qt.ApplicationAttribute.AA_EnableHighDpiScaling, True)
-    if hasattr(Qt, 'AA_UseHighDpiPixmaps'):
-        QApplication.setAttribute(Qt.ApplicationAttribute.AA_UseHighDpiPixmaps, True)
-
+    # PySide6 自动处理 High DPI,无需手动设置
     app = QApplication(sys.argv)
 
     # Set Windows Vista style
