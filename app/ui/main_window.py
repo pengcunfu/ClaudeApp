@@ -13,8 +13,7 @@ from PySide6.QtWidgets import (
     QMessageBox, QLabel, QHeaderView, QAbstractItemView,
     QGroupBox, QSplitter, QCheckBox
 )
-from PySide6.QtCore import Qt, QSize
-from PySide6.QtGui import QFont
+from PySide6.QtCore import QSize
 
 from .widgets.json_highlighter import JsonHighlighter
 
@@ -40,19 +39,12 @@ class ClaudeConfigGUI(QMainWindow):
 
         # Main layout
         main_layout = QVBoxLayout(central_widget)
-
-        # Header
-        header_label = QLabel("Claude Configuration Manager")
-        header_font = QFont()
-        header_font.setPointSize(16)
-        header_font.setBold(True)
-        header_label.setFont(header_font)
-        header_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        main_layout.addWidget(header_label)
+        main_layout.setSpacing(5)
+        main_layout.setContentsMargins(10, 5, 10, 10)
 
         # Config path label
         path_label = QLabel(f"配置文件: {self.config_path}")
-        path_label.setStyleSheet("color: #666; font-size: 11px;")
+        path_label.setStyleSheet("color: #666; font-size: 11px; padding: 2px 0;")
         main_layout.addWidget(path_label)
 
         # Tab widget
